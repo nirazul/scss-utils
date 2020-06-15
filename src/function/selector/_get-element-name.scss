@@ -1,0 +1,16 @@
+@use '../string' as u-string;
+
+/// Remove classes, pseudo-classes and attributes from a selector part
+/// @param {string} $selector - The selector part to be cleaned
+/// @return {string}
+///
+@function get-element-name($selector) {
+  $result: $selector;
+  $markers: (' ', '.', ':', '[');
+
+  @each $marker in $markers {
+    $result: nth(u-string.split($result, $marker), 1);
+  }
+
+  @return $result;
+}

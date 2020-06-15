@@ -1,0 +1,8 @@
+# nvm config
+.nvmrc
+
+# Dependency directories
+node_modules/
+
+# Editor config files
+.idea/

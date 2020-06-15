@@ -1,0 +1,33 @@
+@use 'sass:list';
+@use 'sass:meta';
+@use 'sass:string';
+
+/// Concatenate a list using a given separator
+/// @link https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/#miscellaneous
+/// @param {List} $list - The list to be concatenated
+/// @param {string} $glue - A separator string to be inserted between items
+/// @return {string} - A string containing list items connected with a separator string
+///
+@function concat($list, $glue: '') {
+  $result: null;
+
+  @if list.length($list) == 0 {
+    @return '';
+  }
+
+  @for $i from 1 through (list.length($list)) {
+    $e: list.nth($list, $i);
+
+    @if meta.type-of($e) == list {
+      $result: string.unquote('#{$result}#{concat($e, $glue, true)}');
+    } @else {
+      @if $i == list.length($list) {
+        $result: string.unquote('#{$result}#{$e}');
+      } @else {
+        $result: string.unquote('#{$result}#{$e}#{$glue}');
+      }
+    }
+  }
+
+  @return $result;
+}

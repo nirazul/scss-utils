@@ -1,0 +1,18 @@
+@use 'sass:meta';
+@use 'sass:math';
+
+/// Remove the unit of a length
+/// @param {number} $number - Number to remove unit from
+/// @return {number} - Unitless number
+///
+@function strip-unit($number) {
+  @if meta.type-of($number) != 'number' {
+    @error 'Provided value `#{$number}` must be of type number!';
+  }
+
+  @if (math.is-unitless($number)) {
+    @return $number;
+  }
+
+  @return $number / ($number * 0 + 1);
+}

@@ -1,0 +1,41 @@
+@use 'sass:list';
+@use 'sass:string';
+
+/// Split `$string` into several parts using `$delimiter`.
+/// @param {string} $string - String to split
+/// @param {string} $delimiter ('') - String to use as a delimiter to split `$string`
+/// @return {List}
+///
+@function split($string, $delimiter: '') {
+  $result: ();
+  $length: string.length($string);
+
+  @if string.length($delimiter) == 0 {
+    @for $i from 1 through $length {
+      $result: list.append($result, string.slice($string, $i, $i));
+    }
+
+    @return $result;
+  }
+
+  $running: true;
+  $remaining: $string;
+
+  @while $running {
+    $index: string.index($remaining, $delimiter);
+
+    @if $index {
+      $slice: string.slice($remaining, 1, $index - 1);
+
+      @if (string.length($slice) > 0) {
+        $result: list.append($result, $slice);
+      }
+
+      $remaining: string.slice($remaining, $index + string.length($delimiter));
+    } @else {
+      $running: false;
+    }
+  }
+
+  @return list.append($result, $remaining);
+}
