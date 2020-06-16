@@ -10,7 +10,7 @@
     @error 'Vertical root "#{$vertical-root}" must be either "top" or "bottom"';
   }
 
-  @if (not list.index((top, bottom), $horizontal-root)) {
+  @if (not list.index((left, right), $horizontal-root)) {
     @error 'Horizontal root "#{$horizontal-root}" must be either "left" or "right"';
   }
 

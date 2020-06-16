@@ -1,5 +1,5 @@
 @use 'sass:list';
-@use '../meta' as meta-utils;
+@use '../meta/is-truthy' as *;
 
 /// Removes all non-true values from a list
 /// @link http://hugogiraudel.com/2013/10/09/advanced-sass-list-functions-again/
@@ -10,7 +10,7 @@
   $result: ();
 
   @each $item in $list {
-    @if (meta-utils.is-truthy($item)) {
+    @if (is-truthy($item)) {
       $result: list.append($result, $item);
     }
   }

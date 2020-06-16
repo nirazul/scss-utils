@@ -1,4 +1,4 @@
-@use '../string' as string-utils;
+@use '../string/split' as *;
 
 /// Remove classes, pseudo-classes and attributes from a selector part
 /// @param {string} $selector - The selector part to be cleaned
@@ -9,7 +9,7 @@
   $markers: (' ', '.', ':', '[');
 
   @each $marker in $markers {
-    $result: nth(string-utils.split($result, $marker), 1);
+    $result: nth(split($result, $marker), 1);
   }
 
   @return $result;

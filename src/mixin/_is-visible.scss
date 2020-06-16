@@ -31,7 +31,7 @@
   }
 
   @if $has-params {
-    @for $i from 1 through list . length($transition-params) {
+    @for $i from 1 through (list.length($transition-params)) {
       $param: nth($transition-params, $i);
 
       @if meta.type-of($param) == 'list' { // If $param contains a space (a.k.a. a whole string)

@@ -1,5 +1,5 @@
 @use 'sass:list';
-@use '../meta' as meta-utils;
+@use '../meta/is-truthy' as *;
 
 /// Replace a value with another one in a list
 /// @link https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/#replacing-values-from-list
@@ -13,7 +13,7 @@
 
   @for $i from 1 through (list.length($list)) {
     @if list.nth($list, $i) == $old-value {
-      @if (meta-utils.is-truthy($value)) {
+      @if (is-truthy($value)) {
         $result: list.append($result, $value);
       }
     } @else {

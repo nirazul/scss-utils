@@ -1,4 +1,4 @@
-@use '../list' as list-utils;
+@use '../list/replace' as *;
 
 /// Remove a value from a list
 /// @link https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/#removing-values-from-list
@@ -7,5 +7,5 @@
 /// @return {*} - The list's first item
 ///
 @function remove($list, $value) {
-  @return list-utils.replace($list, $value);
+  @return replace($list, $value);
 }

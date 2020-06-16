@@ -2,7 +2,7 @@
 @use 'sass:math';
 @use 'sass:meta';
 @use 'sass:string';
-@use '../meta' as meta-utils;
+@use '../meta/is-truthy' as *;
 
 /// Replace a value within a list by index
 /// @link https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/#replacing-values-from-list
@@ -26,7 +26,7 @@
 
     @for $i from 1 through (list.length($list)) {
       @if $i == $index {
-        @if (meta-utils.is-truthy($value)) {
+        @if (is-truthy($value)) {
           $result: list.append($result, $value);
         }
       } @else {
