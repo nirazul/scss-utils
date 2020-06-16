@@ -31,6 +31,6 @@ You have the choice to implement packages, different in size:
 [license-image]:https://img.shields.io/github/license/nirazul/scss-utils?style=flat-square
 [license-url]:LICENSE
 
-[npm-version-image]:http://img.shields.io/npm/v/@nirazul/scss-utils.svg?style=flat-square
-[npm-downloads-image]:http://img.shields.io/npm/dm/@nirazul/scss-utils.svg?style=flat-square
-[npm-url]:https://npmjs.org/package/@dreipol/scss-utils
+[npm-version-image]:https://img.shields.io/npm/v/@nirazul/scss-utils?style=flat-square
+[npm-downloads-image]:https://img.shields.io/npm/dm/@nirazul/scss-utils.svg?style=flat-square
+[npm-url]:https://npmjs.org/package/@nirazul/scss-utils

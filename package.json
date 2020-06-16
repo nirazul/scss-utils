@@ -4,7 +4,7 @@
   "description": "Sass utility functions and mixins",
   "main": "_index.scss",
   "scripts": {
-    "prepublish": "npm run test",
+    "prepublishOnly": "npm run test",
     "test": "npm run lint && npx sass test.scss",
     "lint": "npx stylelint --max-warnings 0 **/*.scss"
   },
