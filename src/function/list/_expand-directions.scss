@@ -1,0 +1,22 @@
+@use 'sass:list';
+
+/// Expand a given list to 4 items, similar to css padding shorthand expressions.
+/// Inspired by expansions used in css shortand expressions (eg. margin or padding).
+/// @param {List} $list - List containing zero to four items
+/// @return {List} - Updated list expanded to always four entries
+///
+@function expand-directions($list) {
+  $len-list: list.length($list);
+
+  @if ($len-list == 0) {
+    @return (null, null, null, null);
+  } @else if ($len-list == 1) {
+    @return (list.nth($list, 1), list.nth($list, 1), list.nth($list, 1), list.nth($list, 1));
+  } @else if ($len-list == 2) {
+    @return (list.nth($list, 1), list.nth($list, 2), list.nth($list, 1), list.nth($list, 2));
+  } @else if ($len-list == 3) {
+    @return (list.nth($list, 1), list.nth($list, 2), list.nth($list, 3), list.nth($list, 2));
+  } @else {
+    @return (list.nth($list, 1), list.nth($list, 2), list.nth($list, 3), list.nth($list, 4));
+  }
+}

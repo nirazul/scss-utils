@@ -1,0 +1,36 @@
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:string';
+@use '../meta' as meta-utils;
+
+/// Return a number of values from a list
+/// @link https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/#miscellaneous
+/// @param {List} $list - The input list
+/// @param {number} $start - The slice range's start index
+/// @param {number} $end - The slice range's end index
+/// @return {List} - A list of items
+///
+@function slice($list, $start: 1, $end: list.length($list)) {
+  $result: null;
+
+  @if meta.type-of($start) != number or meta.type-of($end) != number {
+    @warn 'Either $start or $end are not a number for `slice`';
+  } @else if $start > $end {
+    @warn 'The start index has to be lesser than or equals to the end index for `slice`';
+  } @else if $start < 1 or $end < 1 {
+    @warn 'List indexes must be non-zero integers for `slice`';
+  } @else if $start > list.length($list) {
+    @warn 'List index is #{$start} but list is only #{list.length($list)} item long for `slice`';
+  } @else if $end > list.length($list) {
+    @warn 'List index is #{$end} but list is only #{list.length($list)} item long for `slice`';
+  } @else {
+    $result: ();
+
+    @for $i from $start through $end {
+      $result: list.append($result, list.nth($list, $i));
+    }
+  }
+
+  @return $result;
+}

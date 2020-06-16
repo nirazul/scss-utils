@@ -1,1 +1,14 @@
 @forward 'list/concat';
+@forward 'list/contains';
+@forward 'list/expand-directions';
+@forward 'list/first';
+@forward 'list/insert-nth';
+@forward 'list/last';
+@forward 'list/last-index';
+@forward 'list/prepend';
+@forward 'list/purge';
+@forward 'list/remove';
+@forward 'list/remove-nth';
+@forward 'list/replace';
+@forward 'list/replace-nth';
+@forward 'list/slice';

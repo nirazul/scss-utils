@@ -1,0 +1,13 @@
+@use 'sass:list';
+
+/// Checks if a given list contains a certain value
+/// @param {List} $list - The haystack
+/// @param {*} $val - The needle
+///
+@function contains($list, $val) {
+  @if (list.index($list, $val)) {
+    @return true;
+  }
+
+  @return false;
+}
