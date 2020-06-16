@@ -1,0 +1,7 @@
+/// One or more available input mechanism(s) cannot hover or there are no pointing input mechanisms
+///
+@mixin supports-touch() {
+  @media (any-hover: none) {
+    @content;
+  }
+}

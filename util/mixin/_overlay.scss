@@ -1,0 +1,22 @@
+@use 'sass:list';
+
+/// Add styles for a child to overlay its parent
+/// @param {string} $pos - A declaration value for the `position` property
+/// @param {string} $vertical-root - A vertical spacial property keyword
+/// @param {string} $horizontal-root - A horizontal spacial property keyword
+///
+@mixin overlay($pos: absolute, $vertical-root: top, $horizontal-root: left) {
+  @if (not list.index((top, bottom), $vertical-root)) {
+    @error 'Vertical root "#{$vertical-root}" must be either "top" or "bottom"';
+  }
+
+  @if (not list.index((top, bottom), $horizontal-root)) {
+    @error 'Horizontal root "#{$horizontal-root}" must be either "left" or "right"';
+  }
+
+  position: $pos;
+  #{$vertical-root}: 0;
+  #{$horizontal-root}: 0;
+  width: 100%;
+  height: 100%;
+}

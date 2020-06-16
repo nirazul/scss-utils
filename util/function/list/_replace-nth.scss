@@ -15,11 +15,11 @@
   $result: null;
 
   @if meta.type-of($index) != number {
-    @warn '$index: #{string.quote($index)} is not a number for `replace-nth`';
+    @warn '$index: "#{string.quote($index)}" is not a number for `replace-nth`';
   } @else if $index == 0 {
-    @warn 'ist index 0 must be a non-zero integer for `replace-nth`.';
+    @warn 'List index 0 must be a non-zero integer for `replace-nth`.';
   } @else if math.abs($index) > list.length($list) {
-    @warn 'ist index is #{$index} but list is only #{list.length($list)} item long for `replace-nth`.';
+    @warn 'List index is "#{$index}" but list is only "#{list.length($list)}" items long for `replace-nth`.';
   } @else {
     $result: ();
     $index: if($index < 0, list.length($list) + $index + 1, $index);

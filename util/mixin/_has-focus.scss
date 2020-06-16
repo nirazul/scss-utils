@@ -1,0 +1,18 @@
+@use '../mixin' as mixin-utils;
+
+/// Styles touch/hover states according to browser capabilities
+/// @param {boolean} $toggle - State toggle; Available values: `true`, `false` or `default` (for both)
+///
+@mixin has-focus() {
+  @include mixin-utils.supports-hover {
+    &:hover, &:focus {
+      @content;
+    }
+  }
+
+  @include mixin-utils.supports-touch {
+    &:active {
+      @content;
+    }
+  }
+}

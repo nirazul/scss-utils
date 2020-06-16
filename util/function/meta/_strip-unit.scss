@@ -7,7 +7,7 @@
 ///
 @function strip-unit($number) {
   @if meta.type-of($number) != 'number' {
-    @error 'Provided value `#{$number}` must be of type number!';
+    @error 'Provided value "#{$number}" must be of type number!';
   }
 
   @if (math.is-unitless($number)) {

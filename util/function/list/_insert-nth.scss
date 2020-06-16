@@ -13,11 +13,11 @@
   $result: null;
 
   @if meta.type-of($index) != number {
-    @warn '$index: #{string.quote($index)} is not a number for `insert-nth`.';
+    @warn '$index "#{string.quote($index)}" is not a number.';
   } @else if $index < 1 {
-    @warn 'List index 0 must be a non-zero integer for `insert-nth`';
+    @warn 'List index 0 must be a non-zero integer';
   } @else if $index > list.length($list) {
-    @warn 'List index is #{$index} but list is only #{list.length($list)} item long for `insert-nth`';
+    @warn 'List index is "#{$index}" but list is only "#{list.length($list)}" items long';
   } @else {
     $result: ();
 

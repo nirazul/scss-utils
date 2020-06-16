@@ -1,0 +1,6 @@
+@mixin text-ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+}

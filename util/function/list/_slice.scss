@@ -17,13 +17,13 @@
   @if meta.type-of($start) != number or meta.type-of($end) != number {
     @warn 'Either $start or $end are not a number for `slice`';
   } @else if $start > $end {
-    @warn 'The start index has to be lesser than or equals to the end index for `slice`';
+    @warn 'The start index has to be less than or equal to the end index.';
   } @else if $start < 1 or $end < 1 {
     @warn 'List indexes must be non-zero integers for `slice`';
   } @else if $start > list.length($list) {
-    @warn 'List index is #{$start} but list is only #{list.length($list)} item long for `slice`';
+    @warn 'List index is "#{$start}" but list is only "#{list.length($list)}" items long.';
   } @else if $end > list.length($list) {
-    @warn 'List index is #{$end} but list is only #{list.length($list)} item long for `slice`';
+    @warn 'List index is "#{$end}" but list is only "#{list.length($list)}" items long.';
   } @else {
     $result: ();
 
