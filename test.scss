@@ -1,0 +1,89 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'src/mixin' as mixin-utils;
+@use 'src/function/list' as list-utils;
+@use 'src/function/map' as map-utils;
+@use 'src/function/math' as math-utils;
+@use 'src/function/meta' as meta-utils;
+@use 'src/function/selector' as selector-utils;
+@use 'src/function/string' as string-utils;
+
+.test {
+  $test-list: (foo, bar, baz);
+  $test-map: (foo: bar);
+  $test-color: #0000ff;
+
+  // Mixins
+  @include mixin-utils.at-root('.test');
+  @include mixin-utils.has-focus;
+  @include mixin-utils.hide-text;
+  @include mixin-utils.hide-visually;
+  @include mixin-utils.ios-native-scrolling;
+  @include mixin-utils.is-selectable(true);
+  @include mixin-utils.is-visible(true, 200);
+  @include mixin-utils.last-row(2);
+  @include mixin-utils.overlay;
+  @include mixin-utils.supports-hover;
+  @include mixin-utils.supports-touch;
+  @include mixin-utils.text-ellipsis;
+
+  // Functions
+  $test-functions: (
+    't-list-concat-1': list-utils.concat($test-list, ','),
+    't-list-contains-1': list-utils.contains($test-list, foo),
+    't-list-expand-directions-1': list-utils.expand-directions($test-list),
+    't-list-first-1': list-utils.first($test-list),
+    't-list-insert-nth-1': list-utils.insert-nth($test-list, 2, qux),
+    't-list-last-1': list-utils.last($test-list),
+    't-list-last-index-1': list-utils.last-index($test-list, bar),
+    't-list-prepend-1': list-utils.prepend($test-list, qux),
+    't-list-purge-1': list-utils.purge($test-list),
+    't-list-remove-1': list-utils.remove($test-list, foo),
+    't-list-remove-nth-1': list-utils.remove-nth($test-list, 1),
+    't-list-replace-1': list-utils.replace($test-list, foo, qux),
+    't-list-replace-nth-1': list-utils.replace-nth($test-list, 1, qux),
+    't-list-slice-1': list-utils.slice($test-list, 2, 3),
+    't-map-assign-1': map-utils.assign($test-map),
+    't-map-deep-get-1': map-utils.deep-get($test-map, 'color'),
+    't-meta-is-truthy-1': meta-utils.is-truthy('foo'),
+    't-meta-strip-unit-1': meta-utils.strip-unit(3),
+    't-meta-to-string-1': meta-utils.to-string(foo),
+    't-selector-get-element-name-1': selector-utils.get-element-name('.test'),
+    't-string-replace-1': string-utils.replace('test', 'st', 'oo'),
+    't-string-split-1': string-utils.split('test'),
+  );
+
+  $test-fixtures: (
+    't-list-concat-1': 'foo,bar,baz',
+    't-list-contains-1': true,
+    't-list-expand-directions-1': (foo, bar, baz, bar),
+    't-list-first-1': foo,
+    't-list-insert-nth-1': foo qux bar baz,
+    't-list-last-1': baz,
+    't-list-last-index-1': 2,
+    't-list-prepend-1': (qux, foo, bar, baz),
+    't-list-purge-1': foo bar baz,
+    't-list-remove-1': bar baz,
+    't-list-remove-nth-1': bar baz,
+    't-list-replace-1': qux bar baz,
+    't-list-replace-nth-1': qux bar baz,
+    't-list-slice-1': bar baz,
+    't-map-assign-1': (foo: bar),
+    't-map-deep-get-1': null,
+    't-meta-is-truthy-1': true,
+    't-meta-strip-unit-1': 3,
+    't-meta-to-string-1': 'foo',
+    't-selector-get-element-name-1': 'test',
+    't-string-replace-1': 'teoo',
+    't-string-split-1': 't' 'e' 's' 't',
+  );
+
+  @for $i from 1 through (list.length($test-fixtures)) {
+    $fixture: map.get($test-fixtures, 't-#{$i}');
+    $result: map.get($test-functions, 't-#{$i}');
+
+    @if ($result != $fixture) {
+      @error 'Comparison test ##{$i} failing! - Fixture: #{$fixture} ~vs~ Result: #{$result}';
+    }
+  }
+}
