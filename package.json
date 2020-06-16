@@ -1,6 +1,6 @@
 {
   "name": "@nirazul/scss-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sass utility functions and mixins",
   "main": "_index.scss",
   "scripts": {
