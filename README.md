@@ -25,6 +25,11 @@ You have the choice to implement packages, different in size:
 # Documentation
 <!-- TODO -->
 
+# Credits
+Originally, this library was a fork of [`@dreipol/scss-utils`](https://github.com/dreipol/scss-utils).
+<br>
+It is now maintained separately to speed up implementation of features such as the sass module syntax.
+
 [workflow-image]:https://img.shields.io/github/workflow/status/nirazul/scss-utils/test?style=flat-square
 [workflow-url]:https://github.com/nirazul/scss-utils/actions
 
