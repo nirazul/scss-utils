@@ -14,13 +14,13 @@ npm i -S @nirazul/scss-utils
 # Usage
 Implement collections, functions and mixins via [sass module syntax](https://sass-lang.com/documentation/at-rules/use) `@use`.
 <br>
-You have the choice to implement packages, different in size:
+You have the choice to implement packages, that differ in size:
 
 - `@use '@nirazul/scss-utils'` loads the whole module
-- `@use '@nirazul/scss-utils/mixin'` loads all mixins
-- `@use '@nirazul/scss-utils/function'` loads all functions
-- `@use '@nirazul/scss-utils/function/list'` loads all list functions
-- `@use '@nirazul/scss-utils/function/list/concat'` loads the concat function
+- `@use '@nirazul/scss-utils/lib/mixin'` loads all mixins
+- `@use '@nirazul/scss-utils/lib/function'` loads all functions
+- `@use '@nirazul/scss-utils/lib/function/list'` loads all list functions
+- `@use '@nirazul/scss-utils/lib/function/list/concat'` loads the concat function
 
 # Documentation
 <!-- TODO -->
