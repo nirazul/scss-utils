@@ -1,12 +1,12 @@
 @use 'sass:list';
 @use 'sass:map';
-@use 'mixin' as mixin-utils;
-@use 'function/list' as list-utils;
-@use 'function/map' as map-utils;
-@use 'function/math' as math-utils;
-@use 'function/meta' as meta-utils;
-@use 'function/selector' as selector-utils;
-@use 'function/string' as string-utils;
+@use 'lib/mixin' as mixin-utils;
+@use 'lib/function/list' as list-utils;
+@use 'lib/function/map' as map-utils;
+@use 'lib/function/math' as math-utils;
+@use 'lib/function/meta' as meta-utils;
+@use 'lib/function/selector' as selector-utils;
+@use 'lib/function/string' as string-utils;
 
 .test {
   $test-list: (foo, bar, baz);
