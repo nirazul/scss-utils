@@ -8,7 +8,7 @@ module.exports = {
   'rules': {
     indentation: [2, { severity: 'error' }],
     'scss/no-duplicate-dollar-variables': [true, {
-      'ignoreInsideAtRules': ['else', 'for', 'function', 'if', 'mixin'],
+      'ignoreInsideAtRules': ['each', 'else', 'for', 'function', 'if', 'mixin'],
     }],
   },
 }
