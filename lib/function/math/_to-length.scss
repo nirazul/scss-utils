@@ -1,0 +1,18 @@
+@use 'sass:list';
+@use 'sass:map';
+
+// stylelint-disable-next-line unit-blacklist
+$units: ('px': 1px, 'cm': 1cm, 'mm': 1mm, '%': 1%, 'ch': 1ch, 'pc': 1pc, 'in': 1in, 'em': 1em, 'rem': 1rem, 'pt': 1pt, 'ex': 1ex, 'vw': 1vw, 'vh': 1vh, 'vmin': 1vmin, 'vmax': 1vmax);
+
+/// Add `$unit` to `$value`
+/// @param {number} $value - Value to add unit to
+/// @param {string} $unit - String representation of the unit
+/// @return {number} - `$value` expressed in `$unit`
+///
+@function to-length($value, $unit) {
+  @if not list.index(map.keys($units), $unit) {
+    @error 'Invalid unit "#{$unit}".';
+  }
+
+  @return $value * map.get($units, $unit);
+}

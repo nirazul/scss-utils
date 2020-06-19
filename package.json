@@ -3,22 +3,31 @@
   "version": "1.0.4",
   "description": "Sass utility functions and mixins",
   "main": "_index.scss",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "_index.scss",
+    "lib",
+    "vendor"
+  ],
   "scripts": {
     "prepublishOnly": "npm run test",
-    "test": "npm run lint && npx sass test.scss",
-    "lint": "npx stylelint --max-warnings 0 **/*.scss"
+    "test": "npm run test:lint && npm run test:unit",
+    "test:lint": "npx stylelint --max-warnings 0 **/*.scss",
+    "test:unit": "npx sass test.scss test.css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nirazul/scss-utils.git"
   },
   "keywords": [
-    "sass",
+    "functions",
     "helpers",
-    "scss",
-    "utils",
     "mixins",
-    "functions"
+    "sass",
+    "scss",
+    "utils"
   ],
   "author": {
     "name": "Rouven Bühlmann",
