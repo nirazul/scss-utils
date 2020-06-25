@@ -52,7 +52,7 @@
     't-meta-to-number-1': meta-utils.to-number('3.141'),
     't-meta-to-string-1': meta-utils.to-string(foo),
     't-selector-get-element-name-1': selector-utils.get-element-name('.test'),
-    't-string-replace-1': string-utils.replace('test', 'st', 'oo'),
+    't-string-replace-1': string-utils.str-replace('test', 'st', 'oo'),
     't-string-split-1': string-utils.split('test'),
   );
 
