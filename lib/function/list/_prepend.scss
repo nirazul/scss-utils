@@ -7,5 +7,5 @@
 /// @return {*} - The output list
 ///
 @function prepend($list, $value) {
-  @return list.join($value, $list);
+  @return list.join($value, $list, list.separator($list));
 }

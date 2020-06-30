@@ -8,10 +8,11 @@
 ///
 @function purge($list) {
   $result: ();
+  $separator: list.separator($list);
 
   @each $item in $list {
     @if (is-truthy($item)) {
-      $result: list.append($result, $item);
+      $result: list.append($result, $item, $separator);
     }
   }
 
