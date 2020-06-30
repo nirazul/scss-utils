@@ -83,7 +83,7 @@
     't-string-split-1': 't' 'e' 's' 't',
   );
 
-  @each $key, $value in (map.keys($test-fixtures)) {
+  @each $key in (map.keys($test-fixtures)) {
     $result: map.get($test-functions, $key);
     $fixture: map.get($test-fixtures, $key);
 
