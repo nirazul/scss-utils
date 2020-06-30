@@ -65,7 +65,7 @@
     't-list-last-1': baz,
     't-list-last-index-1': 2,
     't-list-prepend-1': (qux, foo, bar, baz),
-    't-list-purge-1': foo bar baz,
+    't-list-purge-1': (foo, bar, baz),
     't-list-remove-1': bar baz,
     't-list-remove-nth-1': bar baz,
     't-list-replace-1': qux bar baz,
