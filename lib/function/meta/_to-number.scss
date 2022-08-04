@@ -1,5 +1,6 @@
 @use 'sass:list';
 @use 'sass:map';
+@use 'sass:math';
 @use 'sass:meta';
 @use 'sass:string';
 @use '../math/to-length' as *;
@@ -40,7 +41,7 @@ $numbers: ('0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 
       $result: $result * 10 + map.get($numbers, $character);
     } @else {
       $digits: $digits * 10;
-      $result: $result + map.get($numbers, $character) / $digits;
+      $result: $result + math.div(map.get($numbers, $character), $digits);
     }
   }
 
