@@ -35,15 +35,13 @@
     "url": "https://adorable-squid.ch"
   },
   "devDependencies": {
-    "@dreipol/stylelint-config": "^5.0.0",
-    "@dreipol/stylelint-config-bem-pattern": "^2.0.1",
-    "@dreipol/stylelint-config-order": "^3.0.0",
-    "@dreipol/stylelint-config-scss": "^2.0.1",
-    "sass": "^1.26.8",
-    "stylelint": "^13.0.0",
-    "stylelint-order": "^4.0.0",
-    "stylelint-scss": "^3.14.2",
-    "stylelint-selector-bem-pattern": "^2.1.0"
+    "sass": "^1.54.2",
+    "stylelint": "^14.9.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-scss": "^7.0.0",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.3.0"
   },
   "license": "CC0-1.0",
   "bugs": {
