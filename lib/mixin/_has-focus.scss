@@ -1,17 +1,13 @@
-@use '../mixin/supports-hover' as *;
-@use '../mixin/supports-touch' as *;
-
 /// Styles touch/hover states according to browser capabilities
-/// @param {boolean} $toggle - State toggle; Available values: `true`, `false` or `default` (for both)
 ///
 @mixin has-focus() {
-  @include supports-hover {
+  @media (any-hover: hover) {
     &:hover, &:focus {
       @content;
     }
   }
 
-  @include supports-touch {
+  @media (any-hover: none) {
     &:active {
       @content;
     }

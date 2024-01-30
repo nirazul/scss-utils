@@ -21,11 +21,7 @@
   @include mixin-utils.hide-visually;
   @include mixin-utils.ios-native-scrolling;
   @include mixin-utils.is-selectable(true);
-  @include mixin-utils.is-visible(true, 200);
   @include mixin-utils.last-row(2);
-  @include mixin-utils.overlay;
-  @include mixin-utils.supports-hover;
-  @include mixin-utils.supports-touch;
   @include mixin-utils.text-ellipsis;
 
   // Functions
